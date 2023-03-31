@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Flipper</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="color">Click me to flip the color!</h1>
+    <script>
+      const colors = ["#ff6347", "#ffd700", "#00ffff", "#9400d3", "#00ff00", "#ff1493"];
+      const colorTitle = document.getElementById("color");
+      colorTitle.addEventListener("click", function() {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+        colorTitle.style.color = randomColor;
+        colorTitle.textContent = randomColor;
+      });
+    </script>
+  </body>
+</html>
